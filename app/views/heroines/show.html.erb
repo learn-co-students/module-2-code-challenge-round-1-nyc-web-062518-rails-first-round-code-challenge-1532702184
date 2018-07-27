@@ -1,0 +1,7 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<h1><%=@heroine.name %></h1>
+<h3>Super Name: <%=@heroine.super_name %></h3>
+<h3>Power: <%= link_to @heroine.power, power_path %></h3>
