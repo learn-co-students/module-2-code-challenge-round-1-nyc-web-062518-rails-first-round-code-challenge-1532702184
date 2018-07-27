@@ -17,6 +17,7 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.new(params.require(:heroine).permit(:name, :super_name, :power_id, :power))
     if @heroine.valid?
       @heroine.save
+      flash[:notice] = "New heroine successfully create!"
       redirect_to heroine_path(@heroine)
     else
       render :new
