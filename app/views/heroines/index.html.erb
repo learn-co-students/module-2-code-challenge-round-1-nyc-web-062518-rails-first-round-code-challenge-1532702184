@@ -3,8 +3,17 @@
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<!-- This form simply redirects me to powers_path, I couldn't figure out how to make this work, I looked around online and spent a while playing around with it but didn't make process. Instead I decided to make my site a bit more navigable with added links, and I also included a list of heroines on the show page for each power. -->
+
+<h3><%= link_to "Add Your Own Superheroine", new_heroine_path %></h3>
+<%= form_tag("/powers", method: "get") do %>
+  <h3><%= label_tag(:q, "Explore Super Powers") %></h3>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>

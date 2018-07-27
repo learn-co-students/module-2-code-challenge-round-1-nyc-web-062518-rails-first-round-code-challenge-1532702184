@@ -1,0 +1,16 @@
+<h2><%= @heroine.super_name %>'s Page</h2>
+
+<% if flash[:notice] %>
+<h3><%= flash[:notice] %></h3>
+<% end %>
+
+<h3>Real Name: <%= @heroine.name %></h3>
+<h3>Super Power: <%= link_to @heroine.power.name, @heroine.power %></h3>
+<p>(<%= @heroine.power.description %>)</p>
+
+
+<%= link_to "View All Heroines", heroines_path
+ %>
+ <%= link_to "View All Super Powers", powers_path %>
+ <%= link_to "Add a New Heroine", new_heroine_path
+  %>
