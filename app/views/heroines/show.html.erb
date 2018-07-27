@@ -1,0 +1,16 @@
+
+<% if flash[:success] %>
+  <%= flash[:success] %>
+<% end %>
+
+
+<h1 class="center"><%= @heroine.super_name %></h1>
+<img id="img" class="center" src="<%= @heroine.img_url %>" alt="">
+<h2 class="">Name: <%= @heroine.name %></h2>
+
+<h2 class="">Super Power: <%= link_to @heroine.power.name.titleize, @heroine.power %>!!</h2>
+<h3 class="">Super Power Description: It <%= @heroine.power.description %></p>
+
+
+<%= link_to 'All Heroines', heroines_path %><br>
+<%= link_to 'Remove this Super Heroine', @heroine, data: {:confirm => 'Are you sure?'}, :method => :delete %>
