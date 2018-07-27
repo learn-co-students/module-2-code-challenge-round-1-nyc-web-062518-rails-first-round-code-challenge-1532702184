@@ -1,0 +1,7 @@
+<h1>Heroine Name: <%= @heroine.name %></h1>
+<h3>Super Name: <%= @heroine.super_name %></h3>
+<h3>Super Power: <%= link_to @heroine.power.name.capitalize, @heroine.power %></h3>
+
+<p><%= link_to "Edit This Heroine", edit_heroine_path %></p>
+<p><%= link_to "Delete This Heroine", @heroine, method: :delete, data: {confirm: "Are you sure? This action cannot be undone."} %></p>
+<p><%= link_to "Back to All Heroines", heroines_path %></p>
