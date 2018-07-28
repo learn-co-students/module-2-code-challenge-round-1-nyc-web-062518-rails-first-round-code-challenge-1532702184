@@ -13,8 +13,10 @@ class HeroinesController < ApplicationController
 
   def create
     @heroine = Heroine.new(heroine_params)
-    if @heroine.save
-      redirect_to @heroine
+    if @heroine.valid?
+       @heroine.save
+      flash[:notice] = "Heroine created!"
+      redirect_to heroines_path
     else
       render :new
     end

@@ -3,9 +3,9 @@
 <%# TODO: use text_area text_field to refactor the look%>
 <ul>
 <h3>
-  name: <%= @heroine.name %> <br>
-  supername: <%= @heroine.super_name %> <br>
-  power: <%= link_to @heroine.power.name, power_path %>
+  <%= @heroine.name %> <br>
+  <%= @heroine.super_name %> <br>
+  power: <%= link_to @heroine.power.name, power_path(@heroine.power_id) %>
 
 </h3>
 </ul>
