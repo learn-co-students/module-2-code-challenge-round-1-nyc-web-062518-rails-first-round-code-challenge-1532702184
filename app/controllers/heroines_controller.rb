@@ -26,7 +26,7 @@ class HeroinesController < ApplicationController
   private
 
   def heroine_params
-    params.require(:heroine).permit(:name,:super_name)
+    params.require(:heroine).permit(:name,:super_name,:power_id)
   end
 
 end

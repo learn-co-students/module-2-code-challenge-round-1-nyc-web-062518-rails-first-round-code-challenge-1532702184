@@ -4,8 +4,8 @@ class PowersController < ApplicationController
   end
 
   def show
-    @power = Power.find(params[:id])
+    @power = Power.find_by(id: params[:id])
   end
 
-  
+
 end
