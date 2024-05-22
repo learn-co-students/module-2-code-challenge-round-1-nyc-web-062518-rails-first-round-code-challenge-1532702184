@@ -1,8 +1,17 @@
 <h2>All Heroines</h2>
 
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search By Superpower:") %> <br>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<%# TODO: search how to connect to database to filter the search content %>
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
+      <%= link_to heroine.name, heroine_path(heroine) %>
       <%= heroine.super_name %>
     </li>
     <br>
